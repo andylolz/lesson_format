@@ -87,6 +87,7 @@ Resource             = collections.namedtuple('Resource', 'format filename')
 css_assets           = os.path.join(base, "assets/css")
 js_assets            = os.path.join(base, "assets/js")
 scratchblocks_filter = os.path.join(base, "lib/pandoc_scratchblocks/filter.py")
+checkbox_filter      = os.path.join(base, "lib/pandoc_checkboxes/filter.py")
 rasterize            = os.path.join(base, "rasterize.js")
 html_assets          = [os.path.join(base, "assets", x) for x in ("fonts", "img")]
 
@@ -104,6 +105,7 @@ def pandoc_html(input_file, style, language, theme, variables, commands, root_di
         "--highlight-style", "pygments",
         "--template=%s"%os.path.join(template_base, style.html_template),
         "--filter", scratchblocks_filter,
+        "--filter", checkbox_filter,
         "-M", "legal=%s"%legal,
         "-M", "year=%s"%year,
         "-M", "organization=%s"%theme.name,
