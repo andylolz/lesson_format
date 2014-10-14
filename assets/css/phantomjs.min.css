@@ -111,6 +111,7 @@ body {
 
 .lesson-steps img {
   border: none;
+  margin: 0 auto;
 }
 .lesson-steps ul > li:before {
   background: inherit;

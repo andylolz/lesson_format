@@ -1,8 +1,10 @@
 .lesson-steps {
 
-	//	Remove orange border from images
 	img {
-		border: none;
+		//	Remove orange border from images
+		border:	none;
+		//	Remove some of the excess whitespace
+		margin:	0 auto;
 	}
 
 	ul > li:before {
